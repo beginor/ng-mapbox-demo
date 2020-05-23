@@ -12,6 +12,7 @@ import { AppSharedModule } from 'app-shared';
 import { AppCommonModule } from './common/app-common.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { environment } from '../environments/environment';
 
 @NgModule({
     declarations: [
@@ -29,6 +30,12 @@ import { AppComponent } from './app.component';
         AppCommonModule,
         AppRoutingModule
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    providers: [
+        {
+            provide: 'mapboxToken',
+            useFactory: () => environment.mapboxToken
+        }
+    ]
 })
 export class AppModule { }
