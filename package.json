@@ -1,5 +1,5 @@
 {
-  "name": "ng-seed",
+  "name": "mapbox",
   "version": "1.0.0",
   "description": "angular seed app",
   "main": "src/index.html",
@@ -8,15 +8,15 @@
     "ng": "ng",
     "build": "npm run build-shared && npm run build-web && npm run build-handset",
     "build-shared": "ng build app-shared",
-    "build-web": "ng build web --prod --base-href=/ng-seed/web/",
-    "build-handset": "ng build handset --prod --base-href=/ng-seed/handset/",
-    "watch-web": "ng build web --watch --base-href=/ng-seed/web/",
-    "watch-handset": "ng build handset --watch --base-href=/ng-seed/handset/",
+    "build-web": "ng build web --prod --base-href=/mapbox/web/",
+    "build-handset": "ng build handset --prod --base-href=/mapbox/handset/",
+    "watch-web": "ng build web --watch --base-href=/mapbox/web/",
+    "watch-handset": "ng build handset --watch --base-href=/mapbox/handset/",
     "lint-shared": "ng lint app-shared",
     "lint-web": "ng lint web",
     "lint-handset": "ng lint handset",
-    "start-web": "ng serve web --host 0.0.0.0 --base-href=/ng-seed/web/",
-    "start-handset": "ng serve handset --host 0.0.0.0 --base-href=/ng-seed/handset/",
+    "start-web": "ng serve web --host 0.0.0.0 --base-href=/mapbox/web/",
+    "start-handset": "ng serve handset --host 0.0.0.0 --base-href=/mapbox/handset/",
     "test-web": "ng test web --watch",
     "test-handset": "ng test handset --watch",
     "test-web-coverage": "ng test web --code-coverage",
@@ -27,7 +27,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/beginor/ng-seed.git"
+    "url": "git+https://github.com/beginor/ng-mapbox-demo.git"
   },
   "keywords": [
     "angular",
@@ -37,9 +37,9 @@
   "author": "beginor",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/beginor/ng-seed/issues"
+    "url": "https://github.com/beginor/ng-mapbox-demo/issues"
   },
-  "homepage": "https://github.com/beginor/ng-seed#readme",
+  "homepage": "https://github.com/beginor/ng-mapbox-demo#readme",
   "dependencies": {
     "@angular/animations": "~9.1.6",
     "@angular/common": "~9.1.6",

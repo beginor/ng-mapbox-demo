@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('ng-seed App', () => {
+describe('mapbox App', () => {
 
     let page: AppPage;
 
