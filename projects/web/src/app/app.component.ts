@@ -2,7 +2,7 @@ import {
     Component, OnInit, Inject, AfterViewInit, ViewChild, ElementRef, OnDestroy
 } from '@angular/core';
 import {
-    trigger, animate, style, state, transition, AnimationEvent
+    trigger, animate, style, state, transition
 } from '@angular/animations';
 
 import { Map, prewarm, clearPrewarmedResources } from 'mapbox-gl';
@@ -14,7 +14,7 @@ import { Map, prewarm, clearPrewarmedResources } from 'mapbox-gl';
     animations: [
         trigger('state', [
             state('show', style({ left: '0px' })),
-            state('hide', style({ left: '-360px' })),
+            state('hide', style({ left: '-330px' })),
             transition('show => hide', animate('.3s ease-in-out')),
             transition('hide => show', animate('.3s ease-in-out'))
         ])
