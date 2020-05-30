@@ -1,11 +1,14 @@
 import {
-    Component, OnInit, Inject, AfterViewInit, ViewChild, ElementRef, OnDestroy
+    Component, OnInit, Inject, AfterViewInit, ViewChild, ElementRef, OnDestroy,
+    NgZone
 } from '@angular/core';
 import {
     trigger, animate, style, state, transition
 } from '@angular/animations';
 
 import { Map, prewarm, clearPrewarmedResources } from 'mapbox-gl';
+
+import { AppSharedService } from 'app-shared';
 
 @Component({
     selector: 'app-root',
@@ -29,18 +32,24 @@ export class AppComponent implements AfterViewInit, OnInit, OnDestroy {
     private map: Map;
 
     constructor(
-        @Inject('mapboxToken') private mapboxToken: string
+        @Inject('mapboxToken') private mapboxToken: string,
+        private appShared: AppSharedService,
+        private zone: NgZone
     ) { }
 
     public ngAfterViewInit(): void {
-        this.map = new Map({
-            container: this.mapElRef.nativeElement,
-            accessToken: this.mapboxToken,
-            style: 'mapbox://styles/mapbox/streets-v11',
-            center: [113.259, 23.132],
-            zoom: 7
+        this.zone.runOutsideAngular(() => {
+            const map = new Map({
+                container: this.mapElRef.nativeElement,
+                accessToken: this.mapboxToken,
+                style: 'mapbox://styles/mapbox/streets-v11',
+                center: [113.259, 23.132],
+                zoom: 7
+            });
+            window['_mapview'] = map;
+            this.map = map;
+            this.appShared.map.next(map);
         });
-        window['_mapview'] = this.map;
     }
 
     public ngOnInit(): void {
