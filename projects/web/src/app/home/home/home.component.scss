@@ -3,9 +3,4 @@
 :host {
   display: block;
   @include full-width-height();
-
-  .mapview {
-    @include full-width-height();
-  }
-
 }

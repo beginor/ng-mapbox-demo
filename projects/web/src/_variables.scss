@@ -5,6 +5,7 @@
 $enable-shadows: true;
 $enable-rounded: true;
 $enable-caret: false;
+$nav-bar-height: 54px;
 
 @mixin full-width-height() {
   width: 100%;
