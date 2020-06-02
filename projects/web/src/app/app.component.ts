@@ -6,7 +6,9 @@ import {
     trigger, animate, style, state, transition
 } from '@angular/animations';
 
-import { Map, prewarm, clearPrewarmedResources } from 'mapbox-gl';
+import {
+    Map, ScaleControl, NavigationControl, prewarm, clearPrewarmedResources
+} from 'mapbox-gl';
 
 import { AppSharedService } from 'app-shared';
 
@@ -46,9 +48,17 @@ export class AppComponent implements AfterViewInit, OnInit, OnDestroy {
                 center: [113.259, 23.132],
                 zoom: 7
             });
+            const navigation = new NavigationControl({
+                showZoom: true,
+                showCompass: true,
+                visualizePitch: false
+            });
+            map.addControl(navigation, 'top-right');
+            const scale = new ScaleControl();
+            map.addControl(scale, 'bottom-right');
             window['_mapview'] = map;
             this.map = map;
-            this.appShared.map.next(map);
+            this.appShared.setupMap(map);
         });
     }
 
