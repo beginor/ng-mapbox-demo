@@ -19,7 +19,7 @@ const routes: Routes = [
         loadChildren: () => import('./building/building.module').then(m => m.BuildingModule)
     }
 ];
-// tslint:disable: max-line-length
+// tslint:enable: max-line-length
 
 @NgModule({
     imports: [
