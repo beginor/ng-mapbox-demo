@@ -28,10 +28,10 @@ import { AppSharedService } from 'app-shared';
 export class AppComponent implements AfterViewInit, OnInit, OnDestroy {
 
     @ViewChild('mapview', { static: true })
-    public mapElRef: ElementRef<HTMLDivElement>;
+    public mapElRef!: ElementRef<HTMLDivElement>;
     public state = 'show';
 
-    private map: Map;
+    private map!: Map;
 
     constructor(
         @Inject('mapboxToken') private mapboxToken: string,
@@ -56,7 +56,7 @@ export class AppComponent implements AfterViewInit, OnInit, OnDestroy {
             map.addControl(navigation, 'top-right');
             const scale = new ScaleControl();
             map.addControl(scale, 'bottom-right');
-            window['_mapview'] = map;
+            Object.assign(window, { _mapview: map });
             this.map = map;
             this.appShared.setupMap(map);
         });

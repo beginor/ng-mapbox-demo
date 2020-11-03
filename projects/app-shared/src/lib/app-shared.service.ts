@@ -9,10 +9,11 @@ import { filter } from 'rxjs/operators';
 })
 export class AppSharedService {
 
-    private _map = new BehaviorSubject<Map>(null);
+    // tslint:disable-next-line: variable-name
+    private _map = new BehaviorSubject<Map | undefined>(undefined);
 
     public get map(): Observable<Map> {
-        return this._map.pipe(filter(m => !!m));
+        return this._map.pipe(filter(m => !!m)) as Observable<Map>;
     }
 
     constructor() { }

@@ -11,7 +11,7 @@ import { AppSharedService } from 'app-shared';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-    private mapOpts: CameraOptions;
+    private mapOpts!: CameraOptions;
 
     constructor(
         private appShared: AppSharedService
