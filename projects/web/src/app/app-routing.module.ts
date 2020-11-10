@@ -17,6 +17,10 @@ const routes: Routes = [
     {
         path: 'building',
         loadChildren: () => import('./building/building.module').then(m => m.BuildingModule)
+    },
+    {
+        path: 'custom-style',
+        loadChildren: () => import('./custom-style/custom-style.module').then(m => m.CustomStyleModule)
     }
 ];
 // tslint:enable: max-line-length

@@ -46,7 +46,7 @@ export class AppComponent implements AfterViewInit, OnInit, OnDestroy {
                 accessToken: this.mapboxToken,
                 style: 'mapbox://styles/mapbox/streets-v11',
                 center: [113.259, 23.132],
-                zoom: 7
+                zoom: 6
             });
             const navigation = new NavigationControl({
                 showZoom: true,

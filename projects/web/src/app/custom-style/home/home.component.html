@@ -1,0 +1,7 @@
+<div class="list-group">
+  <div class="list-group-item" *ngFor="let layer of layers">
+    {{layer.id}}
+    <input type="checkbox" [checked]="layer.layout!.visibility == 'visible'"
+      (change)="setLayerVisibility($event, layer.id)">
+  </div>
+</div>
