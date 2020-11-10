@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit, OnDestroy {
             type: 'vector',
             scheme: 'tms',
             tiles: [
-                'http://localhost:9080/geoserver/gwc/service/tms/1.0.0/postgis:gd_bas_building@EPSG:3857@pbf/{z}/{x}/{y}.pbf'
+                'http://192.168.6.102:8080/geoserver/gwc/service/tms/1.0.0/postgis:building@EPSG:3857@pbf/{z}/{x}/{y}.pbf'
             ]
         });
         map.addLayer({
@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit, OnDestroy {
             },
             type: 'fill-extrusion',
             source: 'gd_bas_building',
-            'source-layer': 'gd_bas_building',
+            'source-layer': 'building',
             minzoom: 13,
             maxzoom: 23,
             layout: {
@@ -79,9 +79,9 @@ export class HomeComponent implements OnInit, OnDestroy {
         // fly to building;
         map.flyTo({
             center: { lng: 113.35773700852451, lat: 23.152798260893263 },
-            zoom: 16.45,
-            pitch: 60,
-            bearing: 22.40
+            zoom: 14,
+            pitch: 0,
+            bearing: 0
         });
     }
 
