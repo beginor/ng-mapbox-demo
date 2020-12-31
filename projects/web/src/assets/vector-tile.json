@@ -93,7 +93,7 @@
       "type": "vector",
       "scheme": "tms",
       "tiles": [
-        "http://192.168.6.102:8080/geoserver/gwc/service/tms/1.0.0/postgis:gd_env@EPSG:3857@pbf/{z}/{x}/{y}.pbf"
+        "http://localhost:6180/geoserver/gwc/service/tms/1.0.0/postgis:gd_env@EPSG:3857@pbf/{z}/{x}/{y}.pbf"
       ],
       "bounds": [ 109.503700256348, 20.1760597229004, 117.397438049316, 25.518253326416 ],
       "minzoom": 6,
