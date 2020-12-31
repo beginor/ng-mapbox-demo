@@ -79,15 +79,15 @@ export class AppComponent implements AfterViewInit, OnInit, OnDestroy {
         this.state = (this.state === 'show') ? 'hide' : 'show';
     }
 
-    public getToggleIconClass(): string {
-        let classeName = 'fas fa-chevron-';
+    public getToggleIcon(): string {
+        let icon = 'bi/chevron-double-';
         if (this.state === 'show') {
-            classeName += 'left';
+            icon += 'left';
         }
         else {
-            classeName += 'right';
+            icon += 'right';
         }
-        return classeName;
+        return icon;
     }
 
 }

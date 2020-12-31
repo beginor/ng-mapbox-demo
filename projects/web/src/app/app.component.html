@@ -4,7 +4,7 @@
   <div class="router-outlet-container p-2" [@state]="state">
     <router-outlet></router-outlet>
     <div class="toggler p-2" (click)="toggleState($event)">
-      <i [class]="getToggleIconClass()"></i>
+      <svg-icon [path]="getToggleIcon()"></svg-icon>
     </div>
   </div>
 </div>
