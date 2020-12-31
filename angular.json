@@ -24,7 +24,7 @@
             "polyfills": "projects/web/src/polyfills.ts",
             "tsConfig": "projects/web/tsconfig.app.json",
             "aot": true,
-            "baseHref": "/ng-seed/web/",
+            "baseHref": "/mapbox/web/",
             "assets": [
               "projects/web/src/favicon.ico",
               "projects/web/src/assets",
@@ -195,7 +195,7 @@
             "polyfills": "projects/handset/src/polyfills.ts",
             "tsConfig": "projects/handset/tsconfig.app.json",
             "aot": true,
-            "baseHref": "/ng-seed/handset/",
+            "baseHref": "/mapbox/handset/",
             "assets": [
               "projects/handset/src/favicon.ico",
               "projects/handset/src/assets",
