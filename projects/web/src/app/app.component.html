@@ -3,7 +3,7 @@
   <div #mapview class="mapview"></div>
   <div class="router-outlet-container p-2" [@state]="state">
     <router-outlet></router-outlet>
-    <div class="toggler p-2" (click)="toggleState($event)">
+    <div class="toggler p-1" (click)="toggleState($event)">
       <svg-icon [path]="getToggleIcon()"></svg-icon>
     </div>
   </div>
