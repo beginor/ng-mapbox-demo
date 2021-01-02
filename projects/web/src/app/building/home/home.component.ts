@@ -1,7 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import { Map, CameraOptions } from 'mapbox-gl';
-
 import { AppSharedService } from 'app-shared';
 
 @Component({
@@ -11,7 +9,7 @@ import { AppSharedService } from 'app-shared';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-    private mapOpts!: CameraOptions;
+    private mapOpts!: mapboxgl.CameraOptions;
 
     constructor(
         private appShared: AppSharedService
@@ -35,7 +33,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         });
     }
 
-    private addBuildingLayer(map: Map): void {
+    private addBuildingLayer(map: mapboxgl.Map): void {
         // add source
         map.addSource('gd_bas_building', {
             type: 'vector',
@@ -85,7 +83,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         });
     }
 
-    private removeBuildingLayer(map: Map): void {
+    private removeBuildingLayer(map: mapboxgl.Map): void {
         // remove layer;
         map.removeLayer('gd_bas_building');
         // remove source;

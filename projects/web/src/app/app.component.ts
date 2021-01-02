@@ -6,10 +6,6 @@ import {
     trigger, animate, style, state, transition
 } from '@angular/animations';
 
-import {
-    Map, ScaleControl, NavigationControl, prewarm, clearPrewarmedResources
-} from 'mapbox-gl';
-
 import { AppSharedService } from 'app-shared';
 
 @Component({
@@ -31,7 +27,7 @@ export class AppComponent implements AfterViewInit, OnInit, OnDestroy {
     public mapElRef!: ElementRef<HTMLDivElement>;
     public state = 'show';
 
-    private map!: Map;
+    private map!: mapboxgl.Map;
 
     constructor(
         @Inject('mapboxToken') private mapboxToken: string,
@@ -41,20 +37,20 @@ export class AppComponent implements AfterViewInit, OnInit, OnDestroy {
 
     public ngAfterViewInit(): void {
         this.zone.runOutsideAngular(() => {
-            const map = new Map({
+            const map = new mapboxgl.Map({
                 container: this.mapElRef.nativeElement,
                 accessToken: this.mapboxToken,
-                style: 'mapbox://styles/mapbox/streets-v11',
+                style: 'mapbox://styles/beginor/ckjf6ghja1lzt19qrsanpww3i',
                 center: [113.259, 23.132],
                 zoom: 6
             });
-            const navigation = new NavigationControl({
+            const navigation = new mapboxgl.NavigationControl({
                 showZoom: true,
                 showCompass: true,
                 visualizePitch: false
             });
             map.addControl(navigation, 'top-right');
-            const scale = new ScaleControl();
+            const scale = new mapboxgl.ScaleControl();
             map.addControl(scale, 'bottom-right');
             Object.assign(window, { _mapview: map });
             this.map = map;
@@ -63,11 +59,11 @@ export class AppComponent implements AfterViewInit, OnInit, OnDestroy {
     }
 
     public ngOnInit(): void {
-        prewarm();
+        mapboxgl.prewarm();
     }
 
     public ngOnDestroy(): void {
-        clearPrewarmedResources();
+        mapboxgl.clearPrewarmedResources();
         if (!!this.map) {
             this.map.remove();
         }
