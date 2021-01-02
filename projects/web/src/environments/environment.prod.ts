@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    mapboxToken: 'pk.eyJ1IjoiYmVnaW5vciIsImEiOiJjaXQyZmQ1M24wMGIzMnlwZDhqZG5heGIyIn0.cS4xQ_IUfmYUBHdt7i9qqg'
+    mapboxToken: 'sk.eyJ1IjoiYmVnaW5vciIsImEiOiJja2pmMDdvZHAyeGFkMnJwOTd5NjEyd3VuIn0.75UO-7J3r7HJ2QiUcGHwNg'
 };
