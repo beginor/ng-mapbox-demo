@@ -1,9 +1,16 @@
-<app-nav-bar></app-nav-bar>
 <div class="app-main">
   <div #mapview class="mapview"></div>
-  <div class="router-outlet-container p-2" [@state]="state">
+  <div class="router-outlet-container" backdropBlur="16px" [opacity]="0.7" [@state]="state">
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" routerLink="/">
+        <svg-icon path="bi/app-indicator" iconClass="bi-lg"></svg-icon>
+        Mapbox GL
+      </a>
+    </nav>
     <router-outlet></router-outlet>
-    <div class="toggler p-1" (click)="toggleState($event)">
+    <div class="toggler p-1 rounded-right"
+      backdropBlur="16px" [opacity]="0.7"
+      (click)="toggleState($event)">
       <svg-icon [path]="getToggleIcon()"></svg-icon>
     </div>
   </div>

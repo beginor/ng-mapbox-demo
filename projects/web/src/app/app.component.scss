@@ -20,10 +20,11 @@
     @include box-shadow(0 0 4px 0 $dark);
     position: absolute;
     left: 0;
-    top: $nav-bar-height;
+    top: 0;
     bottom: 0;
     width: 330px;
     background-color: $gray-100;
+    z-index: 99;
 
     .toggler {
       @include box-shadow(2px 0 2px 0 $gray-600);

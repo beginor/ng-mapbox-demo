@@ -40,7 +40,7 @@ export class AppComponent implements AfterViewInit, OnInit, OnDestroy {
             const map = new mapboxgl.Map({
                 container: this.mapElRef.nativeElement,
                 accessToken: this.mapboxToken,
-                style: 'mapbox://styles/beginor/ckjf6ghja1lzt19qrsanpww3i',
+                style: 'mapbox://styles/beginor/ckjf6mvge0hhk19p75nt647p5',
                 center: [113.259, 23.132],
                 zoom: 6
             });
@@ -55,6 +55,18 @@ export class AppComponent implements AfterViewInit, OnInit, OnDestroy {
             Object.assign(window, { _mapview: map });
             this.map = map;
             this.appShared.setupMap(map);
+            map.on('load', e => {
+                this.map.addSource('geoserver-dem', {
+                    type: 'raster-dem',
+                    scheme: 'tms',
+                    tiles: ['http://localhost:9080/geoserver/gwc/service/tms/1.0.0/gis_data:gd_dem@EPSG:3857@pbf/{z}/{x}/{y}.png'],
+                    tileSize: 512,
+                    maxzoom: 12,
+                    minzoom: 6,
+                    format: 'png',
+                } as any);
+                map.setTerrain({ source: 'geoserver-dem', exaggeration: 1.3 });
+            });
         });
     }
 
